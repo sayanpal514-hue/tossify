@@ -1,38 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #1e3c72, #2a5298);
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
   color: white;
 }
 
 .container {
   text-align: center;
+  width: 100%;
+  padding: 20px;
 }
 
+
 .coin {
-  width: 120px;
-  height: 120px;
-  margin: 25px auto;
+  width: min(65vw, 240px);
+  height: min(65vw, 240px);
+  margin: 30px auto;
   position: relative;
   transform-style: preserve-3d;
   transition: transform 1s cubic-bezier(.17,.67,.25,1.25);
 }
 
+
 .side {
-  width: 120px;
-  height: 120px;
+  width: 100%;
+  height: 100%;
   border-radius: 50%;
   position: absolute;
   backface-visibility: hidden;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 22px;
+  font-size: clamp(26px, 8vw, 40px);
   font-weight: bold;
-  box-shadow: inset 0 0 15px rgba(0,0,0,.3);
+  box-shadow: inset 0 0 18px rgba(0,0,0,0.35);
 }
 
 .head {
@@ -40,21 +49,24 @@ body {
   color: #222;
 }
 
+
 .tail {
-  background: radial-gradient(circle, #eee, #999);
+  background: radial-gradient(circle, #f0f0f0, #9e9e9e);
   color: #222;
   transform: rotateY(180deg);
 }
 
+
 button {
-  padding: 10px 22px;
-  font-size: 18px;
+  padding: 14px 32px;
+  font-size: clamp(18px, 5vw, 22px);
   border: none;
-  border-radius: 6px;
+  border-radius: 8px;
   background: #ffcc00;
   cursor: pointer;
+  transition: transform 0.2s ease;
 }
 
-button:hover {
-  transform: scale(1.05);
+button:active {
+  transform: scale(0.96);
 }
